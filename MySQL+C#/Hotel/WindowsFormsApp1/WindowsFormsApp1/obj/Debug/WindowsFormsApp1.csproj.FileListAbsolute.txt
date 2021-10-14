@@ -1,0 +1,69 @@
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvtorizationForm.resources
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Andre\Desktop\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Administrator.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvtorizationForm.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Cashier.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Employee.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Pilot.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddClient.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddPlane.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AddFlight.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.changePlane.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.addWorker.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.changeFlight.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.changeWorker.resources
+C:\Users\slava\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvtorizationForm.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Specialist.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainSpecialist.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.addStudent.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ZamDir.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.changeWorker.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Director.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.changeWork.resources
+D:\3 курс\мое БД\заказ\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.addLab.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvtorizationForm.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Client.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Cleaning.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Manager.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewClient.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Booking.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Admin.resources
+D:\3 курс\мое БД\заказ 22 гостинница\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.newUser.resources
