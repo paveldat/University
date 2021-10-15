@@ -1,0 +1,744 @@
+--------------------------------------------------------
+--  File created - четверг-апреля-22-2021   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence SEQ1
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "C##TESTPAV"."SEQ1"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 40 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence SEQ2
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "C##TESTPAV"."SEQ2"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 11 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence SEQ3
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "C##TESTPAV"."SEQ3"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 86 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Sequence SEQ4
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "C##TESTPAV"."SEQ4"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 7 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table ARTICLES
+--------------------------------------------------------
+
+  CREATE TABLE "C##TESTPAV"."ARTICLES" 
+   (	"ID" NUMBER, 
+	"NAME" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table BALANCE
+--------------------------------------------------------
+
+  CREATE TABLE "C##TESTPAV"."BALANCE" 
+   (	"ID" NUMBER, 
+	"CREATE_DATE" TIMESTAMP (3), 
+	"DEBIT" NUMBER, 
+	"CREDIT" NUMBER, 
+	"AMOUNT" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table OPERATIONS
+--------------------------------------------------------
+
+  CREATE TABLE "C##TESTPAV"."OPERATIONS" 
+   (	"ID" NUMBER, 
+	"ARTICLE_ID" NUMBER, 
+	"DEBIT" NUMBER, 
+	"CREDIT" NUMBER, 
+	"CREATE_DATE" TIMESTAMP (3), 
+	"BALANCE_ID" NUMBER, 
+	"USER_ID" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table USERS
+--------------------------------------------------------
+
+  CREATE TABLE "C##TESTPAV"."USERS" 
+   (	"ID" NUMBER, 
+	"FIO" NVARCHAR2(50), 
+	"ROLE" NVARCHAR2(20), 
+	"LOGIN" VARCHAR2(20 BYTE), 
+	"PASSWORD" VARCHAR2(64 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View VIEW_COUNT_BALANCE
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "C##TESTPAV"."VIEW_COUNT_BALANCE" ("Баланс", "Кол-во операций") AS 
+  select b.id as "Баланс"
+     , count(o.balance_id) as "Кол-во операций"
+from balance b
+left join operations o
+    on o.balance_id = b.id
+group by b.id
+;
+--------------------------------------------------------
+--  DDL for View VIEW_SUM_ARTICLES
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE EDITIONABLE VIEW "C##TESTPAV"."VIEW_SUM_ARTICLES" ("Статья расходов", "Сумма прихода", "Сумма расхода") AS 
+  select a.name as "Статья расходов"
+     , sum(o.debit) as "Сумма прихода"
+     , sum(o.credit) as "Сумма расхода"
+from articles a
+left join operations o
+    on o.article_id = a.id
+join balance b
+on b.id = o.balance_id
+WHERE o.create_date != b.create_date
+or b.create_date is null
+group by a.name
+;
+REM INSERTING into C##TESTPAV.ARTICLES
+SET DEFINE OFF;
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('26','Зарплата');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('1','Кварплата');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('2','Еда');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('3','Вода');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('4','Развлечения');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('5','Рестораны');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('6','Сторонние затраты');
+Insert into C##TESTPAV.ARTICLES (ID,NAME) values ('7','Test');
+REM INSERTING into C##TESTPAV.BALANCE
+SET DEFINE OFF;
+Insert into C##TESTPAV.BALANCE (ID,CREATE_DATE,DEBIT,CREDIT,AMOUNT) values ('2',to_timestamp('01.03.21 16:25:19,607000000','DD.MM.RR HH24:MI:SSXFF'),'1000000','101285','-1285');
+Insert into C##TESTPAV.BALANCE (ID,CREATE_DATE,DEBIT,CREDIT,AMOUNT) values ('1',to_timestamp('01.02.21 16:25:19,607000000','DD.MM.RR HH24:MI:SSXFF'),'1000000','340000','660000');
+REM INSERTING into C##TESTPAV.OPERATIONS
+SET DEFINE OFF;
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('21','6','0','201',to_timestamp('02.02.21 16:09:01,000000000','DD.MM.RR HH24:MI:SSXFF'),'1',null);
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('1','1','0','30000',to_timestamp('01.01.21 12:02:08,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('2','2','0','40000',to_timestamp('02.01.21 16:09:01,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('3','3','0','50000',to_timestamp('03.01.21 01:01:01,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('4','4','0','60000',to_timestamp('04.01.21 23:59:59,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('5','5','0','70000',to_timestamp('05.01.21 05:10:01,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('6','6','0','90000',to_timestamp('06.01.21 11:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('14','1','0','6000',to_timestamp('01.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('8','26','1000000','0',to_timestamp('15.01.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'1','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('15','2','0','44645',to_timestamp('02.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('16','3','0','4654',to_timestamp('03.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('17','4','0','45654',to_timestamp('04.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('18','5','0','131',to_timestamp('05.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+Insert into C##TESTPAV.OPERATIONS (ID,ARTICLE_ID,DEBIT,CREDIT,CREATE_DATE,BALANCE_ID,USER_ID) values ('20',null,'1000000','0',to_timestamp('15.02.21 00:00:00,000000000','DD.MM.RR HH24:MI:SSXFF'),'2','1');
+REM INSERTING into C##TESTPAV.USERS
+SET DEFINE OFF;
+Insert into C##TESTPAV.USERS (ID,FIO,ROLE,LOGIN,PASSWORD) values ('6','dvd','Администратор','5','ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d');
+Insert into C##TESTPAV.USERS (ID,FIO,ROLE,LOGIN,PASSWORD) values ('2','123421432','Администратор','2','d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35');
+Insert into C##TESTPAV.USERS (ID,FIO,ROLE,LOGIN,PASSWORD) values ('1','Дац Павел','Администратор','1','6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b');
+Insert into C##TESTPAV.USERS (ID,FIO,ROLE,LOGIN,PASSWORD) values ('3','3','Администратор','3','4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce');
+REM INSERTING into C##TESTPAV.VIEW_COUNT_BALANCE
+SET DEFINE OFF;
+Insert into C##TESTPAV.VIEW_COUNT_BALANCE ("Баланс","Кол-во операций") values ('1','8');
+Insert into C##TESTPAV.VIEW_COUNT_BALANCE ("Баланс","Кол-во операций") values ('2','6');
+REM INSERTING into C##TESTPAV.VIEW_SUM_ARTICLES
+SET DEFINE OFF;
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Рестораны','0','70131');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Кварплата','0','36000');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Еда','0','84645');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Развлечения','0','105654');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Сторонние затраты','0','90201');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Зарплата','1000000','0');
+Insert into C##TESTPAV.VIEW_SUM_ARTICLES ("Статья расходов","Сумма прихода","Сумма расхода") values ('Вода','0','54654');
+--------------------------------------------------------
+--  DDL for Index ARTICLES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."ARTICLES_PK" ON "C##TESTPAV"."ARTICLES" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BALANCE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."BALANCE_PK" ON "C##TESTPAV"."BALANCE" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index OPERATIONS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."OPERATIONS_PK" ON "C##TESTPAV"."OPERATIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."USERS_PK" ON "C##TESTPAV"."USERS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index ARTICLES_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."ARTICLES_PK" ON "C##TESTPAV"."ARTICLES" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index BALANCE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."BALANCE_PK" ON "C##TESTPAV"."BALANCE" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index OPERATIONS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."OPERATIONS_PK" ON "C##TESTPAV"."OPERATIONS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "C##TESTPAV"."USERS_PK" ON "C##TESTPAV"."USERS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_1_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_1_ZAD" 
+BEFORE INSERT ON balance 
+FOR EACH ROW
+BEGIN
+IF :new.debit is null
+or :new.credit is null 
+or :new.create_date is null THEN
+raise_application_error(-20001,'Нельзя создать баланс с нулевым приходом и расходом или незаданной датой');
+END IF;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_1_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_2_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_2_ZAD" 
+BEFORE UPDATE ON OPERATIONS
+FOR EACH ROW
+BEGIN
+  if :old.balance_id is not null
+  then
+    raise_application_error(-20001,'Вы не можете изменить уже существующую в балансе запись');
+  end if;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_2_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_3_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_3_ZAD" 
+BEFORE DELETE ON OPERATIONS
+FOR EACH ROW
+BEGIN
+  if :old.balance_id is not null
+  then
+    rollback;
+  end if;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_3_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR1
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR1" 
+   before insert on "C##TESTPAV"."ARTICLES" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ1.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR1" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR2
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR2" 
+   before insert on "C##TESTPAV"."BALANCE" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ2.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR2" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR3
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR3" 
+   before insert on "C##TESTPAV"."OPERATIONS" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ3.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR3" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR4
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR4" 
+   before insert on "C##TESTPAV"."USERS" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ4.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR4" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR1
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR1" 
+   before insert on "C##TESTPAV"."ARTICLES" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ1.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR1" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR2
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR2" 
+   before insert on "C##TESTPAV"."BALANCE" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ2.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR2" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_1_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_1_ZAD" 
+BEFORE INSERT ON balance 
+FOR EACH ROW
+BEGIN
+IF :new.debit is null
+or :new.credit is null 
+or :new.create_date is null THEN
+raise_application_error(-20001,'Нельзя создать баланс с нулевым приходом и расходом или незаданной датой');
+END IF;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_1_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_3_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_3_ZAD" 
+BEFORE DELETE ON OPERATIONS
+FOR EACH ROW
+BEGIN
+  if :old.balance_id is not null
+  then
+    rollback;
+  end if;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_3_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR3
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR3" 
+   before insert on "C##TESTPAV"."OPERATIONS" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ3.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR3" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_2_ZAD
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TRIG_2_ZAD" 
+BEFORE UPDATE ON OPERATIONS
+FOR EACH ROW
+BEGIN
+  if :old.balance_id is not null
+  then
+    raise_application_error(-20001,'Вы не можете изменить уже существующую в балансе запись');
+  end if;
+END;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TRIG_2_ZAD" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TR4
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##TESTPAV"."TR4" 
+   before insert on "C##TESTPAV"."USERS" 
+   for each row 
+begin  
+   if inserting then 
+      if :NEW."ID" is null then 
+         select SEQ4.nextval into :NEW."ID" from dual; 
+      end if; 
+   end if; 
+end;
+
+/
+ALTER TRIGGER "C##TESTPAV"."TR4" ENABLE;
+--------------------------------------------------------
+--  DDL for Procedure CURSOR_PROCEDURE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##TESTPAV"."CURSOR_PROCEDURE" (interval_beg IN DATE, interval_end IN DATE, articles_id IN NUMBER, analysis IN VARCHAR2) IS
+fin_stream NUMBER:=1;
+CURSOR debit_cursor IS 
+    SELECT article_id, ROUND(((SUM(debit)*100)/fin_stream), 2) AS percantage FROM operations WHERE article_id=articles_id
+    group by article_id ;
+CURSOR credit_cursor IS 
+    SELECT article_id, ROUND(((SUM(credit)*100)/fin_stream), 2) AS percantage FROM operations WHERE article_id=articles_id
+    group by article_id;
+CURSOR amount_cursor IS 
+    SELECT article_id, ROUND(((SUM(debit-credit)*100)/fin_stream), 2) AS percantage FROM operations WHERE article_id=articles_id
+    group by article_id;
+
+    type_analysis VARCHAR2 (50 BYTE):=analysis;
+    art_id NUMBER;
+    perc NUMBER;
+BEGIN
+    DBMS_OUTPUT.enable;
+
+    IF type_analysis='debit' THEN
+        SELECT SUM(debit) INTO fin_stream FROM balance WHERE create_date 
+        BETWEEN TO_DATE(interval_beg, 'DD.MM.YY') and TO_DATE(interval_end, 'DD.MM.YY');
+
+        OPEN debit_cursor;
+        LOOP
+            FETCH debit_cursor INTO art_id, perc;
+            EXIT WHEN debit_cursor%NOTFOUND;
+            DBMS_OUTPUT.PUT_LINE(art_id || '         ' || perc);
+        END LOOP;
+        CLOSE debit_cursor;
+    END IF;
+
+    IF type_analysis='credit' THEN
+        SELECT SUM(credit) INTO fin_stream FROM balance WHERE create_date 
+        BETWEEN TO_DATE(interval_beg, 'DD.MM.YY') and TO_DATE(interval_end, 'DD.MM.YY');
+
+        OPEN credit_cursor;
+
+        LOOP
+            FETCH credit_cursor INTO art_id, perc;
+            EXIT WHEN credit_cursor%NOTFOUND;
+            DBMS_OUTPUT.PUT_LINE(art_id || '         ' || perc);
+        END LOOP;
+        CLOSE credit_cursor;
+    END IF;
+
+    IF type_analysis='amount' THEN
+        SELECT SUM(amount) INTO fin_stream FROM balance WHERE create_date 
+        BETWEEN TO_DATE(interval_beg, 'DD.MM.YY') and TO_DATE(interval_end, 'DD.MM.YY');
+
+        OPEN amount_cursor;
+
+        LOOP
+            FETCH amount_cursor INTO art_id, perc;
+            EXIT WHEN amount_cursor%NOTFOUND;
+            DBMS_OUTPUT.PUT_LINE(art_id || '         ' || perc);
+        END LOOP;
+        CLOSE amount_cursor;
+    END IF;
+
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PROC_1_ZAD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##TESTPAV"."PROC_1_ZAD" 
+AS
+count_ number;
+
+TYPE ARR IS TABLE OF
+        VARCHAR2(50)
+        INDEX BY PLS_INTEGER;
+
+        name_ ARR;
+
+TYPE ARR_NUM IS TABLE OF
+        NUMBER
+        INDEX BY PLS_INTEGER;
+
+debit_ ARR_NUM;
+
+TYPE ARR_TIME IS TABLE OF
+        timestamp
+        INDEX BY PLS_INTEGER;
+
+date_ ARR_TIME;
+
+BEGIN
+select count(distinct a.name)
+into count_
+from balance b
+join operations o
+on o.balance_id=b.id
+join articles a
+on a.id=o.article_id
+where o.balance_id=(select id from balance ORDER BY id desc FETCH first 1 rows only);
+FOR i IN 1..count_ LOOP
+select a.name
+     , SUM(o.debit)
+     , max(o.create_date)
+into name_(i), debit_(i), date_(i)
+from balance b
+join operations o
+on o.balance_id=b.id
+join articles a
+on a.id=o.article_id
+where o.balance_id=(select id from balance ORDER BY id desc FETCH first 1 rows only)
+group by a.name
+OFFSET i-1 ROWS FETCH NEXT 1 ROWS ONLY;
+end loop;
+DBMS_OUTPUT.PUT_LINE(LPAD(RPAD('NAME', 13), 20) || ' | ' 
+                    || LPAD(RPAD('DEBIT', 6), 7) || ' | '
+                    || LPAD(RPAD('DATE', 13), 20));
+DBMS_OUTPUT.PUT_LINE(RPAD(' ', 56, '_'));
+FOR i IN 1..count_ LOOP
+if (debit_(i) is null) then
+DBMS_OUTPUT.PUT_LINE(RPAD(name_(i), 20, ' ') 
+|| ' | ' || RPAD(0, 7) || ' | '   || date_(i));
+end if;
+if (debit_(i) is not null) then
+DBMS_OUTPUT.PUT_LINE(RPAD(name_(i), 20) || ' | '
+|| RPAD(debit_(i), 7) ||' | '|| date_(i));
+end if;
+end loop;
+END PROC_1_ZAD;
+
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PROC_2_ZAD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##TESTPAV"."PROC_2_ZAD" 
+(
+    article1 IN NUMBER
+    , article2 IN NUMBER
+) AS
+BEGIN
+    for T in (SELECT b.id
+                , a.name 
+                , b.amount
+              FROM balance b
+              inner join operations o
+              on o.balance_id=b.id
+              inner join articles a
+              on o.article_id=a.id
+              WHERE b.ID IN (SELECT ID 
+                           FROM operations
+                           WHERE credit IS NOT NULL 
+                           AND ID IN (SELECT ID 
+                                      FROM articles 
+                                      WHERE ID=article1 
+                                      OR ID=article2))
+              order by b.amount desc    --можно убрать, чтобы выводилось оба значения для сравнения
+              fetch FIRST 1 ROWS ONLY)  --аналогично
+        LOOP
+           DBMS_OUTPUT.PUT_LINE('BALANCE_ID: '||t.ID||' | ARTICLE_NAME: '||t.NAME ||' | BALANCE_AMOUNT: '||t.amount);
+        end LOOP;
+END PROC_2_ZAD;
+
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PROC_3_ZAD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##TESTPAV"."PROC_3_ZAD" 
+(
+  balance IN NUMBER 
+  , article OUT NUMBER
+  , namename OUT VARCHAR2
+) AS 
+BEGIN
+select t.id
+     , a.name
+INTO article, namename
+from (select * 
+      from operations
+      WHERE balance_id=balance
+      AND credit IS NOT NULL 
+      ORDER BY credit DESC) t
+      , articles a
+where a.id=t.article_id
+and ROWNUM=1;
+END PROC_3_ZAD;
+
+
+/
+--------------------------------------------------------
+--  Constraints for Table ARTICLES
+--------------------------------------------------------
+
+  ALTER TABLE "C##TESTPAV"."ARTICLES" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."ARTICLES" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."ARTICLES" ADD CONSTRAINT "ARTICLES_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table BALANCE
+--------------------------------------------------------
+
+  ALTER TABLE "C##TESTPAV"."BALANCE" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."BALANCE" ADD CONSTRAINT "BALANCE_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table OPERATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##TESTPAV"."OPERATIONS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."OPERATIONS" ADD CONSTRAINT "OPERATIONS_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table USERS
+--------------------------------------------------------
+
+  ALTER TABLE "C##TESTPAV"."USERS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."USERS" ADD CONSTRAINT "USERS_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##TESTPAV"."USERS" MODIFY ("FIO" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."USERS" MODIFY ("ROLE" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."USERS" MODIFY ("LOGIN" NOT NULL ENABLE);
+  ALTER TABLE "C##TESTPAV"."USERS" MODIFY ("PASSWORD" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table OPERATIONS
+--------------------------------------------------------
+
+  ALTER TABLE "C##TESTPAV"."OPERATIONS" ADD CONSTRAINT "FK_OPERATIONS_ARTICLES" FOREIGN KEY ("ARTICLE_ID")
+	  REFERENCES "C##TESTPAV"."ARTICLES" ("ID") ENABLE;
+  ALTER TABLE "C##TESTPAV"."OPERATIONS" ADD CONSTRAINT "FK_OPERATIONS_BALANCE" FOREIGN KEY ("BALANCE_ID")
+	  REFERENCES "C##TESTPAV"."BALANCE" ("ID") ENABLE;
+  ALTER TABLE "C##TESTPAV"."OPERATIONS" ADD CONSTRAINT "FK_OPERATIONS_USERS" FOREIGN KEY ("USER_ID")
+	  REFERENCES "C##TESTPAV"."USERS" ("ID") ENABLE;
