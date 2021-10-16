@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<mvBaseX name="_NEW" build="0" objcount="13" litcount="22" refcount="22" DIM="true">
+  <d_Named name="PrjH" oid="1"/>
+  <d_Obj oid="1" class="TProject" classID="9" classID2="1">
+    <d_Attr name="Name">_new</d_Attr>
+    <d_Attr name="mvsVer">8</d_Attr>
+  </d_Obj>
+  <d_Named name="CNL" oid="6"/>
+  <d_Obj oid="6" class="d_List" classID="7">
+  </d_Obj>
+  <d_Named name="TL" oid="8"/>
+  <d_Obj oid="8" class="d_List" classID="7">
+  </d_Obj>
+  <d_Named name="FPL" oid="7"/>
+  <d_Obj oid="7" class="d_List" classID="7">
+  </d_Obj>
+  <d_Named name="LL" oid="9"/>
+  <d_Obj oid="9" class="d_List" classID="7">
+    <d_Ref oid="-4"/>
+  </d_Obj>
+    <d_Obj oid="-4" class="d_ChStr" classID="3">
+      <d_Attr name="val">SysLib|1</d_Attr>
+    </d_Obj>
+  <d_Named name="EqBlockNames" oid="11"/>
+  <d_Obj oid="11" class="d_SMemo" classID="6">
+  </d_Obj>
+  <d_Named name="EqBlockStereotypes" oid="12"/>
+  <d_Obj oid="12" class="d_SMemo" classID="6">
+  </d_Obj>
+  <d_Named name="mvsLastObjectID" oid="13"/>
+  <d_Obj oid="13" class="d_Integer" classID="24">
+  </d_Obj>
+  <d_Named name="CModel" oid="2"/>
+  <d_Obj oid="2" class="TActiveDynObjectClass" classID="9" classID2="3">
+    <d_Attr name="Name">Model</d_Attr>
+    <d_Attr name="Stereotype">CEGI  R</d_Attr>
+    <d_AttrObj name="IL" oid="-5"/>
+    <d_AttrObj name="PL" oid="-6"/>
+    <d_AttrObj name="SL" oid="-7"/>
+    <d_AttrObj name="CL" oid="-8"/>
+    <d_AttrObj name="FL" oid="-9"/>
+    <d_AttrObj name="BC" oid="-13"/>
+    <d_AttrObj name="EQ" oid="3"/>
+    <d_AttrObj name="LC" oid="-19"/>
+    <d_AttrObj name="LS" oid="-22"/>
+  </d_Obj>
+    <d_Obj oid="-5" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-6" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-7" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-8" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-9" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-13" class="TBehavChart" classID="9" classID2="31">
+      <d_AttrRef name="CR" oid="2"/>
+      <d_AttrObj name="NL" oid="-10"/>
+      <d_AttrObj name="TL" oid="-11"/>
+      <d_AttrObj name="IMdsp" oid="-12"/>
+    </d_Obj>
+      <d_Obj oid="-10" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-11" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-12" class="TPosition" classID="9" classID2="39">
+      </d_Obj>
+    <d_Obj oid="3" class="TEquationsSet" classID="9" classID2="34">
+      <d_AttrRef name="CR" oid="2"/>
+      <d_AttrObj name="EQL" oid="-14"/>
+      <d_AttrObj name="UVL" oid="-15"/>
+      <d_AttrObj name="DIL" oid="-16"/>
+      <d_AttrObj name="KVL" oid="-17"/>
+      <d_AttrObj name="CBKVL" oid="-18"/>
+    </d_Obj>
+      <d_Obj oid="-14" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-15" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-16" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-17" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-18" class="d_List" classID="7">
+      </d_Obj>
+    <d_Obj oid="-19" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-22" class="TDevStr" classID="9" classID2="7">
+      <d_AttrRef name="DC" oid="2"/>
+      <d_AttrObj name="LDL" oid="-20"/>
+      <d_AttrObj name="LLL" oid="-21"/>
+    </d_Obj>
+      <d_Obj oid="-20" class="d_List" classID="7">
+      </d_Obj>
+      <d_Obj oid="-21" class="d_List" classID="7">
+      </d_Obj>
+  <d_Named name="model" oid="4"/>
+  <d_Obj oid="4" class="TDevInst" classID="9" classID2="13">
+    <d_Attr name="Name">model</d_Attr>
+    <d_Attr name="Stereotype">       </d_Attr>
+    <d_AttrRef name="C" oid="2"/>
+    <d_AttrObj name="PL" oid="-1"/>
+    <d_AttrObj name="EI" oid="-2"/>
+    <d_AttrObj name="IL" oid="-3"/>
+  </d_Obj>
+    <d_Obj oid="-1" class="d_List" classID="7">
+    </d_Obj>
+    <d_Obj oid="-2" class="TDevClassEdInf" classID="9" classID2="9">
+    </d_Obj>
+    <d_Obj oid="-3" class="d_List" classID="7">
+    </d_Obj>
+  <d_Named name="CL" oid="5"/>
+  <d_Obj oid="5" class="d_List" classID="7">
+  </d_Obj>
+  <d_Named name="CCL" oid="10"/>
+  <d_Obj oid="10" class="d_List" classID="7">
+  </d_Obj>
+</mvBaseX>
+
