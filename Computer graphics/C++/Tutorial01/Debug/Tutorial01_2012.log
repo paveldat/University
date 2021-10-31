@@ -1,0 +1,2 @@
+﻿Tutorial01.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  Tutorial01_2012.vcxproj -> D:\3 курс\Компьютерная графика\C++\Debug\Tutorial01.exe

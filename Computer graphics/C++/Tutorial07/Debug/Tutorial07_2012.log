@@ -1,0 +1,16 @@
+﻿D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(115,18-41): warning X3206: 'mul': implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(115,2-41): warning X3206: implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(117,19-43): warning X3206: 'mul': implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(117,2-43): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see D:\3 курс\Компьютерная графика\C++\Debug\Tutorial07_PS.cso
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(115,18-41): warning X3206: 'mul': implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(115,2-41): warning X3206: implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(117,19-43): warning X3206: 'mul': implicit truncation of vector type
+D:\3 ����\������������ �������\C++\Tutorial07\Tutorial07.fx(117,2-43): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see D:\3 курс\Компьютерная графика\C++\Debug\Tutorial07_VS.cso
+  Tutorial07.cpp
+D:\3 курс\Компьютерная графика\C++\Tutorial07\Tutorial07.cpp(1,1): warning C4335: Обнаружен файл в формате Mac: преобразуйте исходный файл в формат DOS или UNIX
+DDSTextureLoader.obj : warning LNK4075: не учитывается "/EDITANDCONTINUE" из-за спецификации "/SAFESEH"
+  Tutorial07_2012.vcxproj -> D:\3 курс\Компьютерная графика\C++\Debug\Tutorial07.exe
