@@ -1,0 +1,4 @@
+Ffdvd Gdfrs Glkfdmlfd ; "Moldincombank" ; +11111111111 ; 2112 2222 2122 2222 ; 2000
+Zuge Gurname Yronymic ; "Saint-Petesburg" ; +22222222222 ; 2222 2122 2222 2222 ; 2
+Zug Furname Atronymic ; "Sberbank" ; +33333333333 ; 2222 2222 2222 2222 ; 3000
+Zu Furname Atronymic ; "Sber" ; +11111111111 ; 2112 2222 2122 2222 ; 18000
