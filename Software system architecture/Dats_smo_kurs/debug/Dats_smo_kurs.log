@@ -1,0 +1,131 @@
+﻿  Generate moc_predefs.h
+  Uic'ing automode.ui...
+  Uic'ing configure.ui...
+  Uic'ing mainwindow.ui...
+  Uic'ing stepmode.ui...
+  Moc'ing automode.h...
+  Moc'ing configure.h...
+  Moc'ing mainwindow.h...
+  Moc'ing stepmode.h...
+  analytics.cpp
+  automode.cpp
+  buffer.cpp
+  configure.cpp
+  controller.cpp
+  device.cpp
+  main.cpp
+  mainwindow.cpp
+  request.cpp
+  source.cpp
+  stepmode.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(248,1): warning C4244: инициализация: преобразование "_Ty" в "_Ty2", возможна потеря данных
+          with
+          [
+              _Ty=unsigned __int64
+          ]
+          and
+          [
+              _Ty2=int
+          ] (компилируется исходный файл buffer.cpp)
+C:\Users\slava\Desktop\Dats_smo_kurs\buffer.cpp(97): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<Dats::Request,int>::pair<Dats::Request,unsigned __int64,0>(std::pair<Dats::Request,unsigned __int64> &&) noexcept"
+C:\Users\slava\Desktop\Dats_smo_kurs\buffer.cpp(97): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<Dats::Request,int>::pair<Dats::Request,unsigned __int64,0>(std::pair<Dats::Request,unsigned __int64> &&) noexcept"
+C:\Users\slava\Desktop\Dats_smo_kurs\analytics.cpp(292,17): warning C4244: инициализация: преобразование "_Ty" в "float", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\slava\Desktop\Dats_smo_kurs\analytics.cpp(293,17): warning C4244: инициализация: преобразование "_Ty" в "float", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(248,1): warning C4244: инициализация: преобразование "_Ty" в "_Ty2", возможна потеря данных
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              _Ty2=float
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(248): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<float,float>::pair<float,int,0>(std::pair<float,int> &&) noexcept" (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility(248): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<float,float>::pair<float,int,0>(std::pair<float,int> &&) noexcept" (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory(694): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<const std::string,std::pair<float,float>>::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>,0>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&) noexcept" (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory(694): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<const std::string,std::pair<float,float>>::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>,0>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&) noexcept" (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(806): message : выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(_Alloc &,_Objty *const ,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::pair<float,float>>>>::void_pointer>>,
+              _Ty=std::pair<const std::string,std::pair<float,float>>,
+              _Objty=std::pair<const std::string,std::pair<float,float>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(806): message : выполняется компиляция ссылки на экземпляр шаблон функции "void std::_Default_allocator_traits<_Alloc>::construct<_Ty,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(_Alloc &,_Objty *const ,std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::pair<float,float>>>>::void_pointer>>,
+              _Ty=std::pair<const std::string,std::pair<float,float>>,
+              _Objty=std::pair<const std::string,std::pair<float,float>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(1015): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<_Ty>(_Alnode &,std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,_Ty &&)"
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>,
+              _Ty=std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::pair<float,float>>>>::void_pointer>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(1015): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<_Ty>(_Alnode &,std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,_Ty &&)"
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>,
+              _Ty=std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<std::allocator<std::pair<const std::string,std::pair<float,float>>>>::void_pointer>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(1095): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>,
+              _Kty=std::string,
+              _Ty=std::pair<float,float>,
+              _Pr=std::less<std::string>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xtree(1095): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_node<std::pair<const std::string,std::pair<float,float>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>,
+              _Kty=std::string,
+              _Ty=std::pair<float,float>,
+              _Pr=std::less<std::string>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\map(165): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::pair<float,float>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::pair<float,float>,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\map(165): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::pair<float,float>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>>(std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>> &&)"
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::pair<float,float>,
+              _Pr=std::less<std::string>,
+              _Alloc=std::allocator<std::pair<const std::string,std::pair<float,float>>>
+          ] (компилируется исходный файл analytics.cpp)
+C:\Users\slava\Desktop\Dats_smo_kurs\analytics.cpp(116): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::pair<float,float>>>>>,bool> std::map<std::string,std::pair<float,float>,std::less<std::string>,std::allocator<std::pair<const std::string,std::pair<float,float>>>>::insert<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>,0>(_Valty &&)"
+          with
+          [
+              _Valty=std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>
+          ]
+C:\Users\slava\Desktop\Dats_smo_kurs\analytics.cpp(116): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const std::string,std::pair<float,float>>>>>,bool> std::map<std::string,std::pair<float,float>,std::less<std::string>,std::allocator<std::pair<const std::string,std::pair<float,float>>>>::insert<std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>,0>(_Valty &&)"
+          with
+          [
+              _Valty=std::pair<std::basic_string<char,std::char_traits<char>,std::allocator<char>>,std::pair<float,int>>
+          ]
+C:\Users\slava\Desktop\Dats_smo_kurs\automode.cpp(24,66): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\slava\Desktop\Dats_smo_kurs\automode.cpp(43,68): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  moc_automode.cpp
+  moc_configure.cpp
+  moc_mainwindow.cpp
+  moc_stepmode.cpp
+  Dats_smo_kurs.vcxproj -> C:\Users\slava\Desktop\Dats_smo_kurs\debug\Dats_smo_kurs.exe
