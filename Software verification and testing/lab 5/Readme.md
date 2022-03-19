@@ -30,7 +30,7 @@
 * suspended -задача находится в подвешенном состоянии и может быть
 активирована.
 Возможные состояния и переходы расширенной задачи.
-! [Picture 1](Software verification and testing/lab 5/img/1.png)
+! [Picture 1](https://github.com/paveldat/University/blob/main/Software%20verification%20and%20testing/lab%205/img/1.png)
 
 
 # Report
