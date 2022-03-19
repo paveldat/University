@@ -38,7 +38,7 @@
 
 
 Возможные состояния и переходы расширенной задачи.
-<img src="https://github.com/paveldat/University/blob/main/Software%20verification%20and%20testing/lab%205/img/1.png" align="center">
+<img src="https://github.com/paveldat/University/blob/main/Software%20verification%20and%20testing/lab%205/img/1.png" align=""middle">
 
 # Report
 Check "Report.docx"
