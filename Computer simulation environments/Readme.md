@@ -1,6 +1,5 @@
 # About
-This repository contains my laboratory work in OpenModelica
-# Report 
-Task and report you can read in the "Report.docx"
+This repository contains my laboratory works in OpenModelica
+
 # Author
 Pavel Dat
