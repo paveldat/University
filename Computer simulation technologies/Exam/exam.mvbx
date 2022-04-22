@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="windows-1251" ?>
-<mvBaseX name="ЭКЗ" build="7" objcount="245" litcount="693" DIM="false">
+<mvBaseX name="EXAM" build="9" objcount="245" litcount="693" DIM="false">
   <d_Named name="PrjH" oid="1"/>
   <d_Obj oid="1" class="TProject" classID="9" classID2="1">
-    <d_Attr name="Name">экз</d_Attr>
+    <d_Attr name="Name">exam</d_Attr>
     <d_Attr name="mvsVer">8.1.6</d_Attr>
   </d_Obj>
   <d_Named name="CNL" oid="6"/>
