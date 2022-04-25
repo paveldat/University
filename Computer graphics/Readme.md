@@ -1,6 +1,5 @@
 # Computer graphics
-Studying computer graphics.
-I exhibited all my labs.
+Computer graphics using C++
 
 # Author
 Dat Pavel
